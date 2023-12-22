@@ -1,0 +1,105 @@
+#outer {
+    height: 80vh;
+    width: 50vh;
+    border: 2px solid black;
+    margin: auto;
+    background: linear-gradient(
+        to left,
+        green,
+        orange
+    );
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
+
+
+  
+  #searchButton {
+    display: inline-block;
+    margin-top: 20px;
+    height: 32px;
+    width: 32px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+    vertical-align: middle; /* Adjust the vertical alignment */
+    background-color: white;
+  
+  }
+  
+  #cityInput {
+    border: 2px solid white;
+    height: 32px;
+    width: 50%;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 20px;
+    border-radius: 40px;
+    padding: 2px;
+    vertical-align: middle; /* Adjust the vertical alignment */
+  
+  }
+  #searchButton img{
+    height: 50%;
+    position: relative;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+}
+
+#sun{
+    height: 20vh;
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+#sun img{
+    margin: auto;
+    height: 100%;
+}
+#temp{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+}
+#city{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+#bottom{
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    align-items: center;
+    height: 50px;
+}
+.humid{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.humid img{
+    height: 80%;
+    margin-right: 5px;
+}
+
+#bott{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#h{
+    margin-left: 85px;
+    font-size: large;
+}
+#w{
+    margin-right: 40px;
+    font-size: large;
+}
