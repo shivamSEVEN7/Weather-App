@@ -1,7 +1,7 @@
 let api = "7159b12f5630fda39a932d0cf5a5ab07";
 let url1 = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 let url2 = "https://api.openweathermap.org/geo/1.0/direct?limit=1";
-let url3 = "http://api.openweathermap.org/geo/1.0/reverse";
+let url3 = "https://api.openweathermap.org/geo/1.0/reverse";
 let temp = document.querySelector('#temp');
 let sun = document.querySelector('#sun img');
 let windSpeed = document.querySelector("#windSpeed");
