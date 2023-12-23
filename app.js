@@ -3,7 +3,8 @@ let url1 = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 let url2 = "https://api.openweathermap.org/geo/1.0/direct?limit=1";
 let temp = document.querySelector('#temp');
 let sun = document.querySelector('#sun img');
-
+let windSpeed = document.querySelector("#windSpeed");
+let humidity = document.querySelector("#humidity");
 let cityOn  = document.querySelector('#city');
 let latitude;
 let longitude;
@@ -28,6 +29,8 @@ const par1 = {
 async function getWeather(){
     let res = await axios.get(url1, {params : par1});
     temp.innerHTML = res.data.main.temp + "°c";
+    humidity.innerHTML = res.data.main.humidity + "%";
+    windSpeed.innerHTML = res.data.wind.speed + " km/h";
     cityOn.innerHTML = city;
     weatherId = res.data.weather[0].id;
     if(weatherId>=200 && weatherId<233){

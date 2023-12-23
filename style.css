@@ -1,15 +1,11 @@
 #outer {
     height: 80vh;
     width: 50vh;
-    border: 2px solid black;
     margin: auto;
-    background: linear-gradient(
-        to left,
-        green,
-        orange
-    );
+    background: linear-gradient(135deg, #00feba, #5b548a);
     font-family: 'Montserrat', sans-serif;
     color: white;
+    border-radius: 40px;
   }
 
 
@@ -19,18 +15,19 @@
     margin-top: 20px;
     height: 32px;
     width: 32px;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 50%;
-    margin-left: 50px;
+    margin-left: 10px;
     vertical-align: middle; /* Adjust the vertical alignment */
     background-color: white;
+    cursor: pointer;
   
   }
   
   #cityInput {
     border: 2px solid white;
     height: 32px;
-    width: 50%;
+    width: 60%;
     display: inline-block;
     margin-left: 40px;
     margin-top: 20px;
@@ -77,29 +74,32 @@
     font-weight: 500;
     align-items: center;
     height: 50px;
+    justify-content: space-around;
+    margin-top: 30px;
 }
 .humid{
     height: 100%;
     display: flex;
     align-items: center;
-    margin-left: 30px;
     margin-top: 40px;
 }
 .humid img{
-    height: 80%;
+    height: 60%;
     margin-right: 5px;
 }
 
 #bott{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 #h{
-    margin-left: 85px;
+   
     font-size: large;
+   position: relative;
+   left: 22px;
 }
 #w{
-    margin-right: 40px;
+  
     font-size: large;
 }
