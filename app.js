@@ -1,6 +1,7 @@
 let api = "7159b12f5630fda39a932d0cf5a5ab07";
 let url1 = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 let url2 = "https://api.openweathermap.org/geo/1.0/direct?limit=1";
+let url3 = "http://api.openweathermap.org/geo/1.0/reverse";
 let temp = document.querySelector('#temp');
 let sun = document.querySelector('#sun img');
 let windSpeed = document.querySelector("#windSpeed");
@@ -10,8 +11,40 @@ let latitude;
 let longitude;
 let cityInput = document.querySelector('#cityInput');
 let btn = document.querySelector('#searchButton');
-let city = 'delhi';
+let locationBtn = document.querySelector("#currentLocation");
+let city;
 let weatherId;
+
+function getCurrentLocation(){
+    return new Promise((resolve,reject) => {
+    navigator.geolocation.getCurrentPosition((position) => {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+        resolve();
+    },
+    (error) => {
+        console.log("Unable to Fetch the location");
+        reject();
+    }
+    );
+    
+        
+    })
+    
+}
+locationBtn.addEventListener('click', async () => {
+    await getCurrentLocation();
+    par1.lat = latitude;
+    par1.lon = longitude;
+    await getLocationName();
+    getWeather();
+    
+    
+});
+    
+
 btn.addEventListener('click', async () => {
     city = cityInput.value;
     par2.q = city;
@@ -26,7 +59,15 @@ const par1 = {
     lat : latitude,
     lon : longitude
 }
+async function getLocationName(){
+    let res = await axios.get(url3, {params : par1})
+    return new Promise((resolve, reject) => {
+        city = res.data[0].name;
+        resolve();
+    })
+}
 async function getWeather(){
+    
     let res = await axios.get(url1, {params : par1});
     temp.innerHTML = res.data.main.temp + "°c";
     humidity.innerHTML = res.data.main.humidity + "%";
