@@ -25,8 +25,24 @@ function getCurrentLocation(){
         resolve();
     },
     (error) => {
-        console.log("Unable to Fetch the location");
-        reject();
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+              alert("You denied the request for Geolocation. Please give location permission");
+              
+              break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+              break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+              break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+              break;
+          }
+
+        reject(error);
+
     }
     );
     
