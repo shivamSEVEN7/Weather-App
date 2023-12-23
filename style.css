@@ -41,7 +41,13 @@
     border-radius: 40px;
     padding: 2px;
     vertical-align: middle; /* Adjust the vertical alignment */
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
   
+  }
+  .top:hover{
+    transform: scale(1.1);
+    
   }
   #searchButton img{
     height: 50%;
